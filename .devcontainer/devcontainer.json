@@ -1,6 +1,6 @@
 {
   "name": "node-express-boilerplate",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:12",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },

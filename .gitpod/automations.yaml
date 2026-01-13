@@ -5,8 +5,11 @@ services:
   mongodb:
     name: MongoDB
     description: MongoDB database for the API
-    command: |
-      docker run --rm --name boilerplate-mongo -p 27017:27017 mongo:4.4
+    commands:
+      start: |
+        docker run --rm --name boilerplate-mongo -p 27017:27017 mongo:4.4
+      ready: |
+        docker exec boilerplate-mongo mongosh --eval "db.adminCommand('ping')" --quiet
     triggeredBy:
       - postDevcontainerStart
 
