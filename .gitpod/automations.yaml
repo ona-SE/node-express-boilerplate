@@ -1,0 +1,19 @@
+# Environment Automations for node-express-boilerplate
+# These run when the development environment starts
+
+services:
+  mongodb:
+    name: MongoDB
+    description: MongoDB database for the API
+    command: |
+      docker run --rm --name boilerplate-mongo -p 27017:27017 mongo:4.4
+    triggeredBy:
+      - postDevcontainerStart
+
+tasks:
+  install-deps:
+    name: Install Dependencies
+    description: Install yarn dependencies
+    command: yarn install
+    triggeredBy:
+      - postDevcontainerStart
